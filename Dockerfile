@@ -16,6 +16,7 @@ RUN curl -sS https://getcomposer.org/installer -o composer-setup.php && \
     rm composer-setup.php
 
 # Install PHP extensions
+RUN pecl install imagick apcu 
 RUN docker-php-ext-enable imagick apcu
 RUN docker-php-ext-install bcmath intl gd pdo_mysql xml
 
